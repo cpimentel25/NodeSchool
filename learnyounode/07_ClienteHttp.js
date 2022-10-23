@@ -17,6 +17,8 @@ function callback(response) {
   response.setEncoding("utf8");
   //   console.log(response.setEncoding("utf8"));
 
+  let rawData = '';
+
   response.on("data", (chunk) => {
     console.log(chunk);
   });
@@ -25,7 +27,7 @@ function callback(response) {
       const parsedData = JSON.parse(rawData);
       console.log(parsedData);
     } catch (error) {
-      console.error(`Got error: ${error.message}`);
+      console.error(`Got error (parsedData): ${error.message}`);
     }
   });
 }
